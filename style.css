@@ -1,0 +1,117 @@
+/* font จาก google fonts */
+/* font-family: 'Press Start 2P', system-ui; */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+/* font-family: 'Bai Jamjuree', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap");
+
+/* -style--------------------------------------------------------------------------------------------- */
+
+/* Code for Firefox */
+::-moz-selection {
+    background: #000000b3;
+    color: #1ed760;
+}
+
+::selection {
+    background: #000000b3;
+    color: #1ed760;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-button {
+    background-color: #333333;
+    border: 1px solid #000000;
+    height: 34px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: linear-gradient(320deg, #1ed760, #409efe);
+    border: #000000 solid 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #409efe;
+    border: #000000b3 solid 5px;
+    border-radius: 10px;
+    box-shadow: -3px -3px 8px 3px #84d4fa, 3px 3px 8px 3px #84d4fa;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fe4040;
+    box-shadow: -3px -3px 8px 3px #ff7070, 3px 3px 8px 3px #ff7070;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 5px solid #000000b3;
+    border-radius: 360px;
+    box-shadow: -3px -3px 8px 3px #84d4fa, 3px 3px 8px 3px #84d4fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    animation: จางหาย 1.5s ease-in-out;
+    background: #84d4fa;
+    /* background-image: url('https://...'); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Bai Jamjuree", sans-serif;
+    /* font-weight: bold; */
+    margin: 0;
+    padding: 0;
+}
+
+body,
+input,
+button {
+    font-size: 100%;
+    /* ปรับขนาดฟอนต์เป็น 100% ของขนาดปกติ */
+}
+
+@media screen and (max-width: 768px) {
+
+    body,
+    input,
+    button {
+        font-size: 80%;
+        /* ลดขนาดฟอนต์เมื่อหน้าจอมีความกว้างไม่เกิน 768px */
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    body,
+    input,
+    button {
+        font-size: 70%;
+        /* ลดขนาดฟอนต์เมื่อหน้าจอมีความกว้างไม่เกิน 480px */
+    }
+}
+
+small {
+    color: #000000;
+    font-size: 80%;
+}
+
+@media screen and (max-width: 768px) {
+    small {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    small {
+        font-size: 50%;
+    }
+}
