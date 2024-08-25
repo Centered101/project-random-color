@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<!-- สวัสดี วัยสะรุ้น Hello, World! ครับ/ค่ะ -->
+
+<head>
+  <title>random color | asia-lb</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="สุ่มเลือกสีของคุณ" />
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+  <meta name="author" content="Centered101" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="project-test-submission.web.app" />
+  <meta property="og:title" content="Centered101" />
+  <meta property="og:description" content="สุ่มเลือกสีของคุณ" />
+  <meta property="og:image" content="./images/logo3.ico" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="project-test-submission.web.app" />
+  <meta property="twitter:title" content="Centered101" />
+  <meta property="twitter:description" content="สุ่มเลือกสีของคุณ" />
+  <meta property="twitter:image" content="./images/logo3.ico" />
+
+  <!-- รูปโปรไฟร์หัวข้อหน้าเว็บ รูปแแบบ external -->
+  <link id="favicon" rel="icon" type="image/png" href="./images/logo3.ico" />
+
+  <link rel="stylesheet" href="./style/style.css" />
+  <link rel="stylesheet" href="./style/random_color.css" />
+
+</head>
+
+<body>
+
+  <img src="./images/logo3.ico" style="width: 90px; height: 90px; object-fit: contain; object-position: center;"
+    width="90" height="90" srcset="./images/logo3.ico" fetchpriority="high">
+
+
+  <h1 id="resultHeading">สุ่มสีของคุณ</h1>
+
+  <div id="container_color">
+    <div id="blue" class="color-box"></div>
+    <div id="red" class="color-box"></div>
+  </div>
+
+  <div class="container_box">
+
+    <button class="btn" id="randomButton" onclick="randomizeColor()">
+      <span class="back"></span>
+      <span class="front">สุ่ม</span>
+    </button>
+    <button class="btn hidden" id="confirmButton" onclick="location.href='./about.html'">
+      <span class="back"></span>
+      <span class="front">ตกลง</span>
+    </button>
+
+    <p id="result"></p>
+    <p id="stats"></p>
+
+  </div>
+</body>
+<script src="./script/main.js"></script>
+
+</html>

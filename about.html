@@ -15,77 +15,26 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="#" />
-    <meta property="og:url" content="#" />
+    <meta property="og:url" content="project-test-submission.web.app" />
     <meta property="og:title" content="Centered101" />
     <meta property="og:description" content="about" />
-    <meta property="og:image" content="/logo3.webp" />
+    <meta property="og:image" content="./images/logo3.ico" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="#" />
-    <meta property="twitter:url" content="#" />
+    <meta property="twitter:url" content="project-test-submission.web.app" />
     <meta property="twitter:title" content="Centered101" />
     <meta property="twitter:description" content="about" />
-    <meta property="twitter:image" content="/logo3.webp" />
+    <meta property="twitter:image" content="./images/logo3.ico" />
 
     <!-- รูปโปรไฟร์หัวข้อหน้าเว็บ รูปแแบบ external -->
-  <link id="favicon" rel="icon" type="image/png" href="/logo3.ico">
+    <link id="favicon" rel="icon" type="image/png" href="./images/logo3.ico">
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/about.css">
 
 </head>
-<style>
-    body {
-        display: flex;
-        justify-content: center;
-        background-color: #84D4FA;
-        margin: 0;
-        padding: 20px;
-        font-family: 'Bai Jamjuree', sans-serif;
-    }
-
-    .content {
-        display: grid;
-    }
-
-    .container {
-        background-color: #fff;
-        border-radius: 0 7px 7px 0;
-        margin: 10px 0 20px 0;
-        padding: 10px;
-        /* box-shadow: 0 4px 6px #0000001a; */
-        max-width: 400px;
-    }
-
-    .container .section {
-        display: flex;
-    }
-
-    .container .section section:nth-of-type(1) {
-        flex-grow: 1;
-        font-weight: bold;
-    }
-
-    .container .section section:nth-of-type(2) {
-        flex-grow: 1;
-        /* margin: 10px; */
-    }
-
-    footer {
-        user-select: none;
-        background-color: #fff;
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-        box-shadow: 4px 4px 8px 4px #000000b3;
-        height: 50vb;
-        padding: 10px;
-    }
-</style>
 
 <body>
     <div
@@ -198,44 +147,49 @@
     </div>
     <footer>
         <div class="content">
-            <img src="https://static.wixstatic.com/media/7b638e_881f1037cbb64f07b0700aa12fc41a17~mv2.png/v1/fill/w_84,h_84,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo3.png"
-                alt="logo3.png" style="width: 90px; height: 90px; object-fit: contain; object-position: center center;"
-                width="90" height="90"
-                srcset="https://static.wixstatic.com/media/7b638e_881f1037cbb64f07b0700aa12fc41a17~mv2.png/v1/fill/w_84,h_84,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo3.png"
-                fetchpriority="high">
-        <div class="container">
-            <div class="section">
-                <ul>
-                    <li>ชื่อ</li>
-                    <li>นามสกุล</li>
-                    <li>ชื่อเล่น</li>
-                    <li>วันเกิด</li>
-                    <li>อายุ</li>
-                    <li>สัญชาติ</li>
-                    <li>ที่อยู่</li>
-                    <li>สาขา</li>
-                    <li>คณะสี</Li>
-                    <li>ชื่อผู้ปกครอง_</li>
-                </ul>
+
+            <img src="./images/logo3.ico"
+                style="width: 90px; height: 90px; object-fit: contain; object-position: center;" width="90" height="90"
+                srcset="./images/logo3.ico" fetchpriority="high">
+
+            <div class="container">
+                <div class="section-1">
+                    <ul>
+                        <li>ชื่อ</li>
+                        <li>นามสกุล</li>
+                        <li>ชื่อเล่น</li>
+                        <li>วันเกิด</li>
+                        <li>อายุ</li>
+                        <li>สัญชาติ</li>
+                        <li>ที่อยู่</li>
+                        <li>สาขา</li>
+                        <li>คณะสี</Li>
+                        <li>&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;&#8194;
+                        </li>
+                    </ul>
+                </div>
                 <br>
-                <ul>
-                    <li>พงศ์พล</li>
-                    <li>พรมผา</li>
-                    <li>เซ็นเตอร์</li>
-                    <li>27-08-2007</li>
-                    <li>
-                        <script>document.write((new Date().getFullYear() - 2007) + " ขวบ");</script>
-                    </li>
-                    <li>ไทย</li>
-                    <li>456 Anytown, Near Anywhere, ST 47523</li>
-                    <li>วิทยาการคอมพิวเตอร์</li>
-                    <li>%s</li>
-                    <li>พอเพียงหัวควย</li>
-                </ul>
+                <div class="section-2">
+                    <ul>
+                        <li>ชัยพล</li>
+                        <li>เพียกขุนทด</li>
+                        <li>โชกุล</li>
+                        <li>11-11-2007</li>
+                        <li>
+                            <script>document.write((new Date().getFullYear() - 2007) + " ขวบ");</script>
+                        </li>
+                        <li>ไทย</li>
+                        <li>456 Anytown, Near Anywhere, ST 47523</li>
+                        <li>วิทยาการคอมพิวเตอร์</li>
+                        <li>%s</li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
-        </div>
     </footer>
 
 </body>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./main.js"></script>
 
 </html>
