@@ -1,0 +1,405 @@
+<!-- <link rel="stylesheet" href="/style/style.css"> -->
+
+<body>
+
+    <div class="container_error">
+        <div id="error"></div>
+        <div class="buttonSubmit">
+            <button name="buttonSubmit" title="ข้อความไม่ถูกต้อง กลับไปแก้ไข้" onclick="resetWindow()">ชื่อไม่ถูก</button>
+            <button name="buttonSubmit" title="ข้อความถูกต้อง ไปหน้าต่อไป" onclick="hide()">ตกลง</button>
+        </div>
+        <div class="textAlert">
+            <ul>กรุณากรอกชื่อ — นามสกุล
+                <li>ข้อความต้องเป็นภาษาไทยเท่านั้น</li>
+                <li>ความยาวของข้อความต้องอยู่ระหว่าง 7 ถึง 20 ตัวอักษร</li>
+            </ul>
+        </div>
+    </div>
+    <div class="usernameSubmit">
+        <div class="usernameSubmit_shadow"></div>
+        <input type="text" name="username" placeholder="ชื่อ — นามสกุล" title="กรุณากรอกชื่อ — นามสกุล" maxlength="20" required />
+        <button type="button" title="ตกลง" onclick="usernameSubmit()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000000" width="20px" height="20px">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+                </path>
+            </svg>
+        </button>
+    </div>
+    <div class="container_randomColor">
+        <img src="./images/logo3.ico" style="width: 90px; height: 90px; object-fit: contain; object-position: center;"
+            width="90" height="90" srcset="./images/logo3.ico" fetchpriority="high">
+
+        <h1 id="displayUsername">สุ่มสีของคุณ: พงศ์พล พรมผา</h1>
+
+        <div id="container_color">
+            <div id="blue" class="color_box" title="สีน้ำเงิน"></div>
+            <div id="red" class="color_box" title="สีแดง"></div>
+        </div>
+
+        <div class="container_box">
+
+            <button id="randomButton" title="สุ่มสี" onclick="randomizeColor()">
+                <span class="back"></span>
+                <span class="front">สุ่ม</span>
+            </button>
+            <button class="hidden" id="confirmButton" title="ตกลง" onclick="location.href='./about.html'">
+                <span class="back"></span>
+                <span class="front">ตกลง</span>
+            </button>
+
+            <p id="result">1</p>
+            <p id="stats">1</p>
+
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        display: grid;
+        place-content: center;
+        background-color: #FFE9D0;
+    }
+
+    .container_error {
+        min-width: 350px;
+        position: relative;
+        background: #F5F5F5;
+        padding: 20px;
+        margin: 50px;
+        display: block;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        border: 4px solid #000000;
+        max-width: 350px;
+        transition: all 400ms cubic-bezier(.23, 1, .32, 1);
+        transform-style: preserve-3d;
+        transform: rotateX(10deg) rotateY(-10deg);
+        perspective: 1000px;
+        box-shadow: 10px 10px 0 #000000;
+        display: none;
+    }
+
+    .container_error:hover {
+        transform: rotateX(5deg) rotateY(1 deg) scale(1.05);
+        box-shadow: 25px 25px 0 -5px #FF004D, 25px 25px 0 0 #000000;
+    }
+
+    .container_error::before {
+        content: "Alert";
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        background: #FF004D;
+        color: #000000;
+        font-weight: bold;
+        padding: 5px 10px;
+        font-size: 14px;
+        transform: translateZ(50px);
+        z-index: 4;
+        border: 2px solid #000000;
+    }
+
+    .container_error .buttonSubmit {
+        margin-top: 20px;
+        display: none;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+    .container_error button {
+        width: 100px;
+        cursor: pointer;
+        background: #FBCA1F;
+        padding: .6em 1.3em;
+        font-weight: 900;
+        border: 3px solid #000000;
+        box-shadow: .1em .1em;
+        border-radius: .4em;
+        transition: all 400ms cubic-bezier(.23, 1, .32, 1);
+    }
+
+    .usernameSubmit {
+        position: relative;
+        background: #FAFAFAB3;
+        padding: 20px;
+        margin: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        border: 4px solid #000000;
+        min-width: 350px;
+        transition: all 400ms cubic-bezier(.23, 1, .32, 1);
+        transform-style: preserve-3d;
+        transform: rotateX(10deg) rotateY(-10deg);
+        perspective: 1000px;
+        box-shadow: 10px 10px 0 #000000;
+        display: none;
+    }
+
+    .usernameSubmit:hover {
+        transform: rotateX(5deg) rotateY(1 deg) scale(1.05);
+        box-shadow: 25px 25px 0 -5px #B1AFFF, 25px 25px 0 0 #000000;
+    }
+
+    .usernameSubmit::before {
+        content: "USERNAME";
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        background: #B1AFFF;
+        color: #000000;
+        font-weight: bold;
+        padding: 5px 10px;
+        font-size: 14px;
+        transform: translateZ(50px);
+        z-index: 4;
+        border: 2px solid #000000;
+    }
+
+    .usernameSubmit_shadow {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transform: translateZ(-50px);
+        background: linear-gradient(45deg,
+                #FF6B6B66 0%,
+                #FF6B6B1A 100%);
+        filter: blur(20px);
+    }
+
+    .usernameSubmit input[name="username"] {
+        width: 100%;
+        outline: none;
+        border: 3px solid #000000;
+        padding: 15px;
+        font-size: 18px;
+        background-color: #BBE9FF;
+        color: #000000;
+        transform: translateZ(10px);
+        transition: all 400ms cubic-bezier(.23, 1, .32, 1);
+        position: relative;
+        z-index: 3;
+        letter-spacing: -.5px;
+    }
+
+    .usernameSubmit input[name="username"]::placeholder {
+        color: #666666;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .usernameSubmit input[name="username"]:hover,
+    .usernameSubmit input[name="username"]:focus {
+        background: #BBE9FF;
+        transform: translateZ(20px) translateX(-5px) translateY(-5px);
+        box-shadow: 5px 5px 0 0 #000000;
+    }
+
+    .usernameSubmit button[type="button"] {
+        cursor: pointer;
+        outline: none;
+        border: 3px solid #000000;
+        background: #B1AFFF;
+        transition: all 400ms cubic-bezier(.23, 1, .32, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        transform: translateZ(20px);
+        position: relative;
+        z-index: 3;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+
+    .usernameSubmit button[type="button"]:hover {
+        background: #B1AFFF;
+        transform: translateZ(10px) translateX(-5px) translateY(-5px);
+        box-shadow: 5px 5px 0 0 #000000;
+    }
+
+    .usernameSubmit button[type="button"]:active {
+        transform: scale(.99);
+        box-shadow: 0px 0px 0 0 #000000;
+    }
+
+    .usernameSubmit button[type="button"] svg {
+        fill: #000000;
+        width: 25px;
+        height: 25px;
+    }
+
+
+
+
+    .container_randomColor {
+        /* display: none; */
+        text-align: center;
+    }
+
+    img {
+        /* margin-top: 20px; */
+        filter: drop-shadow(10px 10px 0 #000000);
+    }
+    
+    h1 {
+        /* margin: 20px; */
+        text-shadow: 10px 10px 5px #00000080, -1px -1px 0 #000000;
+
+        transform: rotateX(10deg) rotateY(-10deg);
+        transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        transform-style: preserve-3d;
+    }
+
+    .color_box {
+        cursor: pointer;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        margin: 5px;
+        transition: opacity .5s ease;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px #0000001a;
+
+
+        position: relative;
+        background: #FAFAFAB3;
+        /* padding: 20px; */
+        /* margin: 50px; */
+        /* display: flex; */
+        /* justify-content: flex-start; */
+        /* align-items: center; */
+        /* gap: 15px; */
+        border: 4px solid #000000;
+        /* min-width: 350px; */
+        transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        transform-style: preserve-3d;
+        transform: rotateX(10deg) rotateY(-10deg);
+        /* perspective: 1000px; */
+        box-shadow: 10px 10px 0 #000000;
+    }
+
+    #red {
+        background-color: red;
+    }
+
+    #blue {
+        background-color: blue;
+    }
+
+    .selected {
+        border: 1px solid yellow;
+        opacity: 1;
+    }
+
+    .unselected {
+        opacity: .3;
+    }
+
+    .container_box {
+        border-radius: 7px;
+        margin: auto 20px;
+        padding: 20px;
+        box-shadow: 0 4px 6px #0000001A;
+
+        position: relative;
+        background-color: #FAFAFAB3;
+        padding: 20px;
+        margin: 50px;
+        /* display: flex; */
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        border: 4px solid #000000;
+        min-width: 400px;
+        transition: all 400ms cubic-bezier(.23, 1, .32, 1);
+        transform-style: preserve-3d;
+        transform: rotateX(10deg) rotateY(-10deg);
+        perspective: 1000px;
+        box-shadow: 10px 10px 0 #000000;
+    }
+
+    .container_randomColor button {
+        --primary: 255, 90, 120;
+        --secondary: 150, 50, 60;
+        /* margin-top: 50px; */
+        width: 60px;
+        height: 50px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        user-select: none;
+        touch-action: manipulation;
+        outline: 10px solid rgb(var(--primary), .5);
+        border-radius: 100%;
+        position: relative;
+        transition: .3s;
+    }
+
+    .container_randomColor button .back {
+        background: rgb(var(--secondary));
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container_randomColor button .front {
+        background: linear-gradient(0deg,
+                rgba(var(--primary), .6) 20%,
+                rgba(var(--primary)) 50%);
+        box-shadow: 0 .5em 1em -.2em rgba(var(--secondary), .5);
+        border-radius: 100%;
+        position: absolute;
+        border: 1px solid rgb(var(--secondary));
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: inherit;
+        transform: translateY(-15%);
+        transition: .15s;
+        color: rgb(var(--secondary));
+    }
+
+    .container_randomColor button:active .front {
+        transform: translateY(0%);
+        box-shadow: 0 0;
+    }
+
+    .result-box {
+        border-radius: 7px;
+        margin-top: 20px;
+    }
+
+    #result,
+    #stats {
+        margin-top: 20px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+<script src="script.js"></script>
+<!-- <script src="/script/main.js"></script> -->

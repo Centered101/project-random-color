@@ -9,6 +9,7 @@ function randomizeColor() {
     if (isRandomized) {
         alert("คุณได้สุ่มสีไปแล้ว!");
         return;
+        
     }
 
     // ซ่อนหัวเรื่อง

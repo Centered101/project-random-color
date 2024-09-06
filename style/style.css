@@ -40,7 +40,7 @@
     background: #409efe;
     border: #000000b3 solid 5px;
     border-radius: 10px;
-    box-shadow: -3px -3px 8px 3px #84d4fa, 3px 3px 8px 3px #84d4fa;
+    box-shadow: -3px -3px 8px 3px #84D4FA, 3px 3px 8px 3px #84D4FA;
 }
 
 /* Handle on hover */
@@ -52,7 +52,7 @@
 ::-webkit-scrollbar-thumb {
     border: 5px solid #000000b3;
     border-radius: 360px;
-    box-shadow: -3px -3px 8px 3px #84d4fa, 3px 3px 8px 3px #84d4fa;
+    box-shadow: -3px -3px 8px 3px #84D4FA, 3px 3px 8px 3px #84D4FA;
 }
 
 * {
@@ -63,7 +63,7 @@
 
 body {
     animation: จางหาย 1.5s ease-in-out;
-    background: #84d4fa;
+    background: #84D4FA;
     /* background-image: url('https://...'); */
     background-position: center;
     background-size: cover;
