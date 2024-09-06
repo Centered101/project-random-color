@@ -1,0 +1,95 @@
+<html lang="th">
+
+<head>
+    <title>สุ่มสี</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="สุ่มเลือกสีของคุณ" />
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+    <meta name="author" content="Centered101" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://project-test-submission.web.app" />
+    <meta property="og:title" content="Centered101" />
+    <meta property="og:description" content="สุ่มเลือกสีของคุณ" />
+    <meta property="og:image"
+        content="https://pranarai.ac.th/wp-content/uploads/2021/01/%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%93%E0%B9%8C-194x300.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://project-test-submission.web.app" />
+    <meta property="twitter:title" content="Centered101" />
+    <meta property="twitter:description" content="สุ่มเลือกสีของคุณ" />
+    <meta property="twitter:image"
+        content="https://pranarai.ac.th/wp-content/uploads/2021/01/%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%93%E0%B9%8C-194x300.png" />
+
+    <link id="favicon" rel="icon" type="image/png"
+        href="https://pranarai.ac.th/wp-content/uploads/2021/01/%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%93%E0%B9%8C-194x300.png" />
+
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+    <div class="container_error">
+        <div id="error"></div>
+        <div class="buttonSubmit">
+            <button name="buttonSubmit" title="ข้อความไม่ถูกต้อง กลับไปแก้ไข้"
+                onclick="resetWindow()">ชื่อไม่ถูก</button>
+            <button name="buttonSubmit" title="ข้อความถูกต้อง ไปหน้าต่อไป" onclick="hide()">ตกลง</button>
+        </div>
+        <div class="textAlert">
+            <ul>กรุณากรอกชื่อ — นามสกุล
+                <li>ข้อความต้องเป็นภาษาไทยเท่านั้น</li>
+                <li>ความยาวของข้อความต้องอยู่ระหว่าง 7 ถึง 20 ตัวอักษร</li>
+            </ul>
+        </div>
+    </div>
+    <div class="usernameSubmit">
+        <div class="usernameSubmit_shadow"></div>
+        <input type="text" name="username" id="username" placeholder="ชื่อ — นามสกุล" title="กรุณากรอกชื่อ — นามสกุล"
+            maxlength="20" required />
+        <button type="button" title="ตกลง" onclick="usernameSubmit()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000000" width="20px" height="20px">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+                </path>
+            </svg>
+        </button>
+    </div>
+    <div class="container_randomColor">
+        <img src="https://pranarai.ac.th/wp-content/uploads/2021/01/%E0%B8%95%E0%B8%A3%E0%B8%B2%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%93%E0%B9%8C-194x300.png"
+            alt="Image">
+
+        <h1 id="displayUsername"></h1>
+        <h3 id="displayFaculty"></h3>
+
+        <div id="container_color">
+            <div id="blue" class="color_box unselected" title="สีน้ำเงิน"></div>
+            <div id="red" class="color_box unselected" title="สีแดง"></div>
+        </div>
+
+        <div class="container_box">
+            <button id="randomButton" title="สุ่มสี" onclick="randomizeColor()">
+                <span class="back"></span>
+                <span class="front">สุ่ม</span>
+            </button>
+
+            <!-- <button class="hidden" id="confirmButton" title="ตกลง" onclick="location.href='/index.html'"></button> -->
+            <button class="hidden" id="confirmButton" title="ตกลง" onclick="goToNextPage()">
+                <span class="back"></span>
+                <span class="front">ตกลง</span>
+            </button>
+
+            <p id="result"></p>
+            <p id="stats"></p>
+        </div>
+    </div>
+</body>
+<script src="dashboard-component.js"></script>
+
+</html>
